@@ -2,20 +2,20 @@
 
 namespace Training\TestOM\Controller\Index;
 
-use Training\TestOM\Model\Test;
+use Training\TestOM\Model\PlayWithTest;
 
 class Index implements \Magento\Framework\App\ActionInterface
 {
-    private $test;
+    private $playTest;
 
     public function __construct(
-        \Training\TestOM\Model\Test $test
+        \Training\TestOM\Model\PlayWithTest $playTest
     ) {
-       $this->test = $test;
+       $this->playTest = $playTest;
     }
     public function execute()
     {
-        $this->test->log();
+        $this->playTest->run();
         exit();
     }
 }
