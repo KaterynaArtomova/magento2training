@@ -4,4 +4,7 @@
     <type name="Magento\Framework\UrlInterface">
        <plugin name = "training_test" type="Training\CheckPluginFunctionality\Plugin\Model\Url"/>
     </type>
+    <type name="Magento\Framework\View\Element\Template">
+        <plugin name="training_test1" type="Training\CheckPluginFunctionality\Plugin\Block\Template" />
+    </type>
 </config>
