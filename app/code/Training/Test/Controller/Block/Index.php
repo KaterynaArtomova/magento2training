@@ -2,31 +2,31 @@
 
 namespace Training\Test\Controller\Block;
 
-class Index extends \Magento\Framework\App\Action\Action
+class Index implements \Magento\Framework\App\ActionInterface
 {
-    /**
-     * @var \Magento\Framework\View\LayoutFactory
-     */
-    private $layoutFactory;
 
-    /**
-     * @param \Magento\Backend\App\Action\Context $context
-     * @param \Magento\Framework\View\LayoutFactory $layoutFactory
-     */
+    private $layoutFactory;
+    private $resultRawFactory;
+    private $resultFactory;
+
     public function __construct(
-        \Magento\Backend\App\Action\Context $context,
-        \Magento\Framework\View\LayoutFactory $layoutFactory
+        \Magento\Framework\View\LayoutFactory $layoutFactory,
+        \Magento\Framework\Controller\Result\RawFactory $resultRawFactory,
+        \Magento\Framework\Controller\ResultFactory $resultFactory
     )
     {
         $this->layoutFactory = $layoutFactory;
-        parent::__construct($context);
-
+        $this->resultRawFactory = $resultRawFactory;
+        $this->resultFactory = $resultFactory;
     }
 
     public function execute()
     {
+        $resultRaw = $this->resultRawFactory->create();
         $layout = $this->layoutFactory->create();
-        $block = $layout->createBlock('Training\Test\Block\Test');
-        $this->getResponse()->appendBody($block->toHtml());
+        $block = $layout->createBlock('Training\Test\Block\Test')->toHtml();
+        $resultRaw->setContents($block);
+        $resultRaw->setHeader('Content-Type', 'text/html', true);
+        return $resultRaw;
     }
 }
