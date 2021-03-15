@@ -31,7 +31,7 @@ class View extends \Magento\Catalog\Controller\Product\View
     )
     {
         if (!$this->customerSession->isLoggedIn()) {
-            return $this->redirectFactory->create()->setPath('customer/account/login');
+//            return $this->redirectFactory->create()->setPath('customer/account/login');
         }
         return parent::execute();
     }
