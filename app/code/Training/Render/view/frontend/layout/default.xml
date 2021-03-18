@@ -1,0 +1,7 @@
+<referenceContainer name="top.container">
+    <container name="topinfo-container" as="topinfo-container" label="Welcome all Content" htmlTag="div"
+               htmlClass="topinfo-container">
+        <block class="Magento\Framework\View\Element\Template" name="topinfo"
+               template="Training_Render::topinfo.phtml"/>
+    </container>
+</referenceContainer>
