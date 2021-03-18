@@ -8,6 +8,7 @@ class Description
         \Magento\Catalog\Block\Product\View\Description $subject
     )
     {
-        $subject->getProduct()->setDescription('Test description');
+        $subject->setTemplate('Training_Test::description.phtml');
+//        $subject->getProduct()->setDescription('Test description');
     }
 }
