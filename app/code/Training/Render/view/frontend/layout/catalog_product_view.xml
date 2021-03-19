@@ -1,0 +1,7 @@
+<body>
+    <referenceBlock name="testargument">
+        <arguments>
+            <argument name="background_color" xsi:type="string">orange</argument>
+        </arguments>
+    </referenceBlock>
+</body>
