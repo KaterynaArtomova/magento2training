@@ -17,11 +17,7 @@ class Onecolumn implements \Magento\Framework\App\ActionInterface
 
     public function execute()
     {
-//        echo $this->request->getFullActionName();
-//        exit();
         $resultPage = $this->resultPageFactory->create();
-//        print_r($resultPage->getLayout()->getUpdate()->getHandles());
-//        exit();
         return $resultPage;
     }
 }
