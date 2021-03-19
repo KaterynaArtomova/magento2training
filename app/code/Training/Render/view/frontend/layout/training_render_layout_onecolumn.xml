@@ -10,5 +10,6 @@
             <block class="Magento\Framework\View\Element\Template" name="custom_one_column_layout"
                    template="Training_Render::onecolumn.phtml"/>
         </referenceContainer>
+        <referenceBlock name="testargument" remove="true"/>
     </body>
 </page>
